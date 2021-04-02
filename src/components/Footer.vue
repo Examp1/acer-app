@@ -1,14 +1,14 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" id="footer">
       <div class="title">
           AGENDA
       </div>
       <ul>
           <li @click="$emit('dayNumber', 1)">
-            Day1
+            <router-link :to="{name: 'day', params: {id: 1}}">Day1</router-link>
           </li>
           <li @click="$emit('dayNumber', 2)">
-            Day2
+              <router-link :to="{name: 'day', params: {id: 2}}">Day2</router-link>
           </li>
       </ul>
   </footer>

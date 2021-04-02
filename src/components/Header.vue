@@ -3,7 +3,7 @@
     <img src="../assets/img/logo.png" alt="">
     <ul>
       <li>
-        <a href="#">AGENDA</a>
+        <a href="#footer">AGENDA</a>
       </li>
       <li>
         <a href="#">SPEAKERS</a>

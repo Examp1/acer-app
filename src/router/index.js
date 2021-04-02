@@ -4,22 +4,38 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'Login',
+  //   component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
+  // },
   {
     path: '/',
-    name: 'Login',
-    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    name: 'days',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
+    redirect: 'day/1', 
+    children: [
+      {
+        path: 'day/:id',
+        name: 'day',
+        component: () => import(/* webpackChunkName: "about" */ '../components/Day.vue'),
+      }
+    ],
   },
   // {
-  //   path: '/home/day',
+  //   path: '/home/day/:dayNumber',
   //   props: true,
   //   name: 'Day',
-  //   component: () => import(/* webpackChunkName: "day" */ '../components/day/Day.vue')
+  //   children: [
+  //     {
+  //       // при совпадении пути с шаблоном /user/:id/profile
+  //       // в <router-view> компонента User будет показан UserProfile
+  //       path: 'day',
+  //       component: () => import(/* webpackChunkName: "day" */ '../components/Day.vue')
+  //     },
+  //   ]
   // },
+  
 ]
 
 const router = new VueRouter({

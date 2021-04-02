@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <Login v-if="!isAutorisated"></Login>
-    <Home v-else></Home>
+    <!-- <Login v-if="!isAutorisated"></Login>
+    <Home v-else></Home> -->
+    <router-view></router-view>
   </div>
 </template>
 
 
 <script>
-import Login from './views/Login'
-import Home from './views/Home'
+// import Login from './views/Login'
+// import Home from './views/Home'
 export default {
   components: {
-    Home,
-    Login
+    // Home,
+    // Login
   },
   data() {
     return {
